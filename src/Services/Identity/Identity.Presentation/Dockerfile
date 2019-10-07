@@ -3,18 +3,16 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
-WORKDIR /src
-COPY ["$(system.defaultWorkingDirectory)/src/Services/Identity/Identity.Presentation/Maktub.Services.Identity.Presentation.csproj", "src/Services/Identity/Identity.Presentation/"]
-RUN dotnet restore "src/Services/Identity/Identity.Presentation/Maktub.Services.Identity.Presentation.csproj"
-COPY . .
-WORKDIR "/src/src/Services/Identity/Identity.Presentation"
-RUN dotnet build "Maktub.Services.Identity.Presentation.csproj" -c Release -o /app
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
 
-FROM build AS publish
-RUN dotnet publish "Maktub.Services.Identity.Presentation.csproj" -c Release -o /app
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o /app
 
-FROM base AS final
+# Build runtime image
+FROM microsoft/aspnetcore:2.0
 WORKDIR /app
-COPY --from=publish /app .
+COPY --from=base /app .
 ENTRYPOINT ["dotnet", "Maktub.Services.Identity.Presentation.dll"]
