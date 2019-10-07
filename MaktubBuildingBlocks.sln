@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F5155653-BF73-4E8E-A9BE-AF73B5B12596}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{6F483119-12E1-42B7-8DAB-484AD33F2A38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBrokers", "MessageBrokers", "{833266E0-5470-4384-9772-1C74A1F8D061}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maktub.BuildingBlocks.MessageBrokers.EventBus", "src\BuildingBlocks\MessageBrokers\EventBus\Maktub.BuildingBlocks.MessageBrokers.EventBus.csproj", "{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Debug|x64.Build.0 = Debug|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Debug|x86.Build.0 = Debug|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Release|x64.ActiveCfg = Release|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Release|x64.Build.0 = Release|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Release|x86.ActiveCfg = Release|Any CPU
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6F483119-12E1-42B7-8DAB-484AD33F2A38} = {F5155653-BF73-4E8E-A9BE-AF73B5B12596}
+		{833266E0-5470-4384-9772-1C74A1F8D061} = {6F483119-12E1-42B7-8DAB-484AD33F2A38}
+		{8828E3EA-9B20-4BF1-8B3A-DFC655CCC051} = {833266E0-5470-4384-9772-1C74A1F8D061}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C171B07-DB8D-409A-A165-07CC664E0860}
+	EndGlobalSection
+EndGlobal

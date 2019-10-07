@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  maktub.identity:
+    image: ${DOCKER_REGISTRY-}maktubidentity
+    build:
+      context: .
+      dockerfile: src/Services/Identity/Identity.Presentation/Dockerfile
+
+  maktub.memento:
+    image: ${DOCKER_REGISTRY-}maktubmemento
+    build:
+      context: .
+      dockerfile: src/Services/Memento/Memento.Presentation/Dockerfile
+
+
+  maktub.messenger:
+    image: ${DOCKER_REGISTRY-}maktubmessenger
+    build:
+      context: .
+      dockerfile: src/Services/Messenger/Messenger.Presentation/Dockerfile
+
