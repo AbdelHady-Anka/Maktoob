@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["src/Services/Identity/Identity.Presentation/Maktub.Services.Identity.Presentation.csproj", "src/Services/Identity/Identity.Presentation/"]
+COPY ["$(system.defaultWorkingDirectory)/src/Services/Identity/Identity.Presentation/Maktub.Services.Identity.Presentation.csproj", "src/Services/Identity/Identity.Presentation/"]
 RUN dotnet restore "src/Services/Identity/Identity.Presentation/Maktub.Services.Identity.Presentation.csproj"
 COPY . .
 WORKDIR "/src/src/Services/Identity/Identity.Presentation"
