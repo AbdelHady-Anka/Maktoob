@@ -1,4 +1,4 @@
-FROM microsoft/aspnetcore-build AS build-env
+FROM microsoft/dotnet:2.2-aspnetcore-build AS build-env
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
