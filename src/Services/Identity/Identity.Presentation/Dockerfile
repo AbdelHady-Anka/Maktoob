@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch as build
 # Copy csproj and restore as distinct layers
-#COPY * ./
+COPY . ./
 RUN dotnet restore
 
 # Copy everything else and build
