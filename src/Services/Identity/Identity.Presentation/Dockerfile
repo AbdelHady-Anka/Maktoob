@@ -1,16 +1,18 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build-env
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
 WORKDIR /app
+EXPOSE 80
+EXPOSE 443
 
-# Copy csproj and restore as distinct layers
-COPY *.csproj ./
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
+WORKDIR /
+COPY . .
 RUN dotnet restore
+RUN dotnet build "Maktub.Services.Identity.Presentation.csproj" -c Release -o /app
 
-# Copy everything else and build
-COPY . ./
-RUN dotnet publish -c Release -o out
+FROM build AS publish
+RUN dotnet publish "Maktub.Services.Identity.Presentation.csproj" -c Release -o /app
 
-# Build runtime image
-FROM microsoft/aspnetcore
+FROM base AS final
 WORKDIR /app
-COPY --from=build-env /app/out .
+COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "Maktub.Services.Identity.Presentation.dll"]
