@@ -37,10 +37,6 @@
       "httpPort": 14690,
       "useSSL": true,
       "sslPort": 44359
-    },
-    "Azure Dev Spaces": {
-      "commandName": "AzureDevSpaces",
-      "launchBrowser": true
     }
   }
 }
