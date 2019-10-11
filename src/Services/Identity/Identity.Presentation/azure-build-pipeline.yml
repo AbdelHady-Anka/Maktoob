@@ -6,7 +6,7 @@ trigger:
 
 variables:
   registryServerName: '$(registryName).azurecr.io'
-  imageName: '$(projectName)'
+  imageName: identity
   # define 3 more variables: registryName, registryLogin and registryPassword in the build pipeline in UI
 
 
