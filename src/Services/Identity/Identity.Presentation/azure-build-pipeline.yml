@@ -31,9 +31,9 @@ steps:
   inputs:
     helmVersion: 2.14.1
 
-- bash: helm package --version $(build.buildId) --destination $(build.artifactStagingDirectory) $(system.defaultWorkingDirectory)/src/Services/Identity/Identity.Presentation/charts/identitypresentation
+- bash: helm package --version $(build.buildId) --destination $(build.artifactStagingDirectory) $(system.defaultWorkingDirectory)/src/Services/Identity/Identity.Presentation/charts/$(projectName)
   displayName: 'helm package'
 
-- bash: az acr helm push -n $(registryName) -u $(registryLogin) -p $(registryPassword) $(build.artifactStagingDirectory)/identitypresentation-$(build.buildId).tgz
+- bash: az acr helm push -n $(registryName) -u $(registryLogin) -p $(registryPassword) $(build.artifactStagingDirectory)/$(projectName)-$(build.buildId).tgz
   displayName: 'az acr helm push'
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))

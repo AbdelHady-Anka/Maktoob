@@ -1,0 +1,10 @@
+replicaCount: 1
+image:
+  useImagePullSecrets: false
+  pullPolicy: Always
+service:
+  internalPort: 80
+  externalPort: 80
+ingress:
+  enabled: true
+  basedomain: alrrafidayn-aks-dns-ba67ccde.hcp.centralus.aksapp.io # replace with your own from the portal
