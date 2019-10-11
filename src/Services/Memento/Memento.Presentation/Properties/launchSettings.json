@@ -37,6 +37,13 @@
       "httpPort": 10000,
       "useSSL": true,
       "sslPort": 44362
+    },
+    "Azure Dev Spaces": {
+      "commandName": "AzureDevSpaces",
+      "launchBrowser": true,
+      "resourceGroup": "alrrafidayn-rg",
+      "aksName": "alrrafidayn-aks",
+      "subscriptionId": "564262eb-c31b-4379-b02a-17d6a12657e2"
     }
   }
 }
