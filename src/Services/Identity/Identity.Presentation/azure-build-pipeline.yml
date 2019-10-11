@@ -3,13 +3,6 @@ pool:
 
 trigger:
 - master
-  batch: true
-  branches:
-    include: 
-    - refs/heads/*
-  paths:
-    include: 
-    - $(projectName)/
 
 variables:
   registryServerName: '$(registryName).azurecr.io'
