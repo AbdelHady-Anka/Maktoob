@@ -2,7 +2,13 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 trigger:
-- master
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - /src/Services/Memento/
+    - /src/BuildingBlocks
 
 variables:
   registryServerName: '$(registryName).azurecr.io'
