@@ -4,14 +4,14 @@ build:
   context: ..\..\..\..
   dockerfile: Dockerfile
 install:
-  chart: charts/mementopresentation
+  chart: charts/memento
   values:
   - values.dev.yaml?
   - secrets.dev.yaml?
   set:
     replicaCount: 1
     image:
-      repository: mementopresentation
+      repository: memento
       tag: $(tag)
       pullPolicy: Never
     ingress:
