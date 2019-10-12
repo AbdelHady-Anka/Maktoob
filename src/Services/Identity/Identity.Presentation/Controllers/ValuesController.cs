@@ -14,7 +14,7 @@ namespace Maktub.Services.Identity.Presentation.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "Identity", "value1", "value2" };
+            return new string[] { "Identity", "value1", "value2", "value4" };
         }
 
         // GET api/values/5
