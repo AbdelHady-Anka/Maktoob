@@ -1,7 +1,7 @@
 kind: helm-release
 apiVersion: 1.1
 build:
-  context: ..\..\..\..
+  context: .
   dockerfile: Dockerfile
 install:
   chart: charts/messenger
@@ -9,6 +9,15 @@ install:
   - values.dev.yaml?
   - secrets.dev.yaml?
   set:
+    # Optionally, specify an array of imagePullSecrets. These secrets must be manually created in the namespace.
+    # This will override the imagePullSecrets array in values.yaml file.
+    # If the dockerfile specifies any private registry, the imagePullSecret for that registry must be added here.
+    # ref: https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
+    #
+    # For example, the following uses credentials from secret "myRegistryKeySecretName".
+    #
+    # imagePullSecrets:
+    #   - name: myRegistryKeySecretName
     replicaCount: 1
     image:
       repository: messenger

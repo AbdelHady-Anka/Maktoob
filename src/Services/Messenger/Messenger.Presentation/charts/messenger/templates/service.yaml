@@ -1,21 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "messenger.fullname" . }}
   labels:
-    app: {{ template "fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    app: {{ template "messenger.name" . }}
+    chart: {{ template "messenger.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
 spec:
+  type: {{ .Values.service.type }}
   ports:
-  - port: {{ .Values.service.externalPort }}
-    protocol: TCP
-    targetPort: {{ .Values.service.internalPort }}
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
   selector:
-    app: {{ template "fullname" . }}
-{{ if .Values.ingress.enabled }}
-  type: ClusterIP
-{{ else }}
-  type: LoadBalancer
-{{ end }}
+    app: {{ template "messenger.name" . }}
+    release: {{ .Release.Name }}
