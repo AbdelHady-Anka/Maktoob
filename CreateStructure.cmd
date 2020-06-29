@@ -1,9 +1,12 @@
 REM dotnet new sln -n Maktub
 REM dotnet new sln -n MaktubServices
-dotnet new sln -n MaktubBuildingBlocks
+REM dotnet new sln -n MaktubBuildingBlocks
 
-dotnet "new" "classlib" "-lang" "c#" "-n" "Maktub.BuildingBlocks.MessageBrokers.EventBus" "-o" "src\BuildingBlocks\MessageBrokers\EventBus"
-dotnet "sln" "MaktubBuildingBlocks.sln" "add" "src\BuildingBlocks\MessageBrokers\EventBus\Maktub.BuildingBlocks.MessageBrokers.EventBus.csproj"
+REM dotnet "new" "classlib" "-lang" "c#" "-n" "Maktub.BuildingBlocks.MessageBrokers.EventBus" "-o" "src\BuildingBlocks\MessageBrokers\EventBus"
+REM dotnet "sln" "MaktubBuildingBlocks.sln" "add" "src\BuildingBlocks\MessageBrokers\EventBus\Maktub.BuildingBlocks.MessageBrokers.EventBus.csproj"
+
+dotnet "new" "classlib" "-lang" "c#" "-n" "Maktub.BuildingBlocks.MessageBrokers.RabbitMQ" "-o" "src\BuildingBlocks\MessageBrokers\RabbitMQ"
+dotnet "sln" "MaktubBuildingBlocks.sln" "add" "src\BuildingBlocks\MessageBrokers\RabbitMQ\Maktub.BuildingBlocks.MessageBrokers.RabbitMQ.csproj"
 
 REM dotnet "new" "webapi" "-lang" "C#" "-n" "Maktub.Services.Messenger.Presentation" "-o" "src\Services\Messenger\Messenger.Presentation"
 REM dotnet "new" "classlib" "-lang" "C#" "-n" "Maktub.Services.Messenger.Common" "-o" "src\Services\Messenger\Messenger.Common"

@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "src\\Services\\Identity"
+		},
+		{
+			"path": "src\\BuildingBlocks\\MessageBrokers"
+		},
+		{
+			"path": "src\\Services\\Memento"
+		},
+		{
+			"path": "src\\Services\\Messenger"
+		}
+	],
+	"settings": {}
+}
