@@ -29,7 +29,7 @@ steps:
 - task: HelmInstaller@0
   displayName: 'Install Helm'
   inputs:
-    helmVersion: 2.14.1
+    helmVersion: 3.2.4
 
 - bash: helm package --version $(build.buildId) --destination $(build.artifactStagingDirectory) $(system.defaultWorkingDirectory)/src/Services/Identity/Identity.Presentation/charts/$(projectName)
   displayName: 'helm package'
